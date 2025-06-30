@@ -40,8 +40,6 @@ Retrieves all users and all bookings, including:
 - FULL OUTER JOIN returns all records from both tables (simulated in MySQL)
 - Proper join selection depends on what data you need to retrieve
 
-Try adding WHERE clauses to these queries to filter the results further!
-
 # SQL Subqueries Practice for Airbnb-like Database
 
 This repository contains SQL queries demonstrating both correlated and non-correlated subqueries using an Airbnb-like database schema.
@@ -92,4 +90,61 @@ Identifies users who have made more than 3 bookings.
 - How to structure complex filtering conditions
 - Techniques for aggregating data in subqueries
 
-Try adding additional conditions to these queries to filter the results further!
+# SQL Aggregation and Window Functions Practice
+
+This repository demonstrates data analysis techniques using aggregation functions and window functions with an Airbnb-like database schema.
+
+## Queries Included
+
+### 1. Basic Aggregation (GROUP BY)
+
+- Calculates the total number of bookings per user
+- Includes total amount spent by each user
+- Uses LEFT JOIN to include users with no bookings
+- Ordered by most frequent bookers first
+
+### 2. Window Functions (RANK, DENSE_RANK, ROW_NUMBER)
+
+- Ranks properties by number of bookings received
+- Demonstrates three different ranking methods:
+  - RANK(): Leaves gaps in ranking for ties
+  - DENSE_RANK(): No gaps in ranking
+  - ROW_NUMBER(): Simple sequential numbering
+- Includes property details and booking counts
+
+### 3. Advanced Window Function (LAG)
+
+- Shows monthly booking trends
+- Calculates month-over-month:
+  - Booking growth (absolute count)
+  - Revenue growth (percentage)
+- Uses LAG() to compare with previous period
+
+## Key Concepts Demonstrated
+
+**Aggregation Functions:**
+
+- COUNT() for tallying records
+- SUM() for calculating totals
+- GROUP BY for grouping data
+
+**Window Functions:**
+
+- RANK(), DENSE_RANK(), ROW_NUMBER() for ranking
+- LAG() for period-over-period comparisons
+- OVER() clause to define window frames
+- ORDER BY within window functions
+
+## How to Use
+
+1. Execute the database schema and sample data scripts first
+2. Run the queries in `aggregation_window.sql`
+3. Compare the different ranking methods in query #2
+4. Analyze the monthly trends in query #3
+
+## Learning Outcomes
+
+- When to use aggregation vs window functions
+- How different ranking methods behave with ties
+- Techniques for period-over-period analysis
+- Calculating growth rates with window functions
